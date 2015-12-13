@@ -1,0 +1,36 @@
+create by xzh
+modified by lzw
+
+输入：ckd_imported.mat
+输出：ckd_preprocessed.mat
+
+预处理的原理就是把“?”的内容替换成该组值的正常平均值
+我输出的值是按照每个值“,”（英文的逗号）分隔
+
+以下是各组值的正常平均值的来源
+1.年龄的均值我选择了32岁，人口普查的数据
+2.Blood Pressure就是血压，按理来说应该是舒张压跟收缩压两个值，但是不知道为啥只有一个值，网上说80-120，所以我选择了100， \\ 应为舒张压，改为80
+3.Specific Gravity是尿比重，百度百科说是1.015-1.025，我取了中值1.020
+4.Albumin是白蛋白 1-5分 我选择3分作为正常
+5.Sugar是糖 1-5分我同样选择3分作为正常
+6.Red Blood Cells是血红细胞，选择normal(1)为正常 
+7.Pus Cell是脓细胞，我选择normal(1)作为正常
+8.Pus Cell clumps是脓细胞团，我选择notpresent(0)就是无脓细胞团作为正常
+9.Bacteria是细菌，我选择notpresent(0)作为正常值
+10.Blood Glucose Random是随机血糖选择100作为正常值
+11.Blood Urea是血尿素 网上说7-18mg/dl是正常，我选择130作为参考值*网上是13，但是里面很多人的值远高于20，所以估计是数据是  \\ 需要检查:12.5*18 = 225
+12.Serum Creatinine是血清肌酸酐，选择0.8为正常值
+13.Sodium是钠含量，选择150作为标准值
+14.Potassium是钾含量，选择4.0作为标准值
+15.Hemoglobin是血红蛋白含量，13.5作为标准值
+16.Packed  Cell Volume是红细胞压积，选择45作为标准值
+17.White Blood Cell Count是血白细胞数，选择6500作为标准值
+18.Red Blood Cell Count是血红细胞数，选择4.8作为标准值
+19.Hypertension是高血压，选择no(0)作为标准值
+20.Diabetes Mellitus是糖尿病，选择no(0)作为标准值
+21.Coronary Artery Disease冠心病，选择no(0)作为标准值
+22.Appetite是胃口，选择good(1)作为标准值
+23.Pedal Edema是足部水肿，选择no(0)作为标准值
+24.Anemia是贫血，选择no(0)作为标准值
+25.class这组没有问号，但是某部分是no而部分是notckd，按照文档我将no的值全部替换成notckd \\ 有问号，无no，默认无病(0)
+至此，预处理全部完成

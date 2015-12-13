@@ -1,0 +1,15 @@
+import data from 'chronic_kidney_disease_raw.txt'
+TREAT
+
+normal as 0
+abnormal as 1
+present as 1
+not present as 0
+yes as 1
+no as 0
+good as 1
+poor as 0
+ckd as 1
+notckd as 0
+? as NaN
+
