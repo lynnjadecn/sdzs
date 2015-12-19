@@ -28,5 +28,8 @@ Yt = simlssvm({X,Y,type,gam,sig2}, {alpha,b}, Xt);
 
 % verify the result
 fprintf('Correctness: %d\n', size(find((Yt - Yr) == 0), 1) / size(Yr, 1));
-% find((Yt - Yr) ~= 0)
+
+% find the wrong samples
+wrong = find((Yt - Yr) ~= 0);
+wrong'
 % find((Yt - Yr) == -1)
